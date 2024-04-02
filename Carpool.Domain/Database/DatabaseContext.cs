@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Carpool.Domain.Database
 {
@@ -10,7 +7,8 @@ namespace Carpool.Domain.Database
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseMySQL("Server=localhost;User ID=root;Password=root;Database=carpool");
-            optionsBuilder.UseMySQL("server=localhost;port=3308;database=carpool;user=root;password=;");
+            string connectionString = "server=localhost;port=3308;database=carpool;user=root;password=;";
+            optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
