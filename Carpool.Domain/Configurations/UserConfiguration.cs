@@ -24,6 +24,11 @@ namespace Carpool.Domain.Configurations
             builder.Property(u => u.UserEmail).IsRequired().HasMaxLength(255);
             builder.Property(u => u.UserPassword).IsRequired().HasMaxLength(255);
             builder.Property(u => u.UserPhoneNumber).IsRequired().HasMaxLength(25);
+
+            // Configure one-to-many relationship between User and Status
+            builder.HasOne<Status>(u => u.Status)
+            .WithMany(s => s.Users)
+            .HasForeignKey(u => u.UserID);
         }
     }
 }
