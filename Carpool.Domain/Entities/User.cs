@@ -14,6 +14,7 @@ namespace Carpool.Domain.Entities
         public string UserPassword { get; set; } = string.Empty;
         public string UserPhoneNumber { get; set; } = string.Empty;
 
+
         // One-to-Many relationship
         public int StatusID { get; set; }
         public Status Status { get; set; }
@@ -21,14 +22,20 @@ namespace Carpool.Domain.Entities
         public int DriverTypeID { get; set; }
         public DriverType DriverType { get; set; }
 
+        public ICollection<Travel> Travels { get; set; }
+
+
+        // One-to-one relationship
         public Car Car { get; set; }
-
-
 
         // Many-to-many relationship
         public ICollection<UserTravelPreference> UserTravelPreferences { get; set; }
         public ICollection<UserReward> UserRewards { get; set; }
         public ICollection<UserNotification> UserNotifications { get; set; }
+        public ICollection<UserReservation> UserReservations { get; set; }
+
+
+        // Many-to-One relationship
         public ICollection<UserReview> ReceivedUserReview { get; set; }
         public ICollection<UserReview> SentUserReview { get; set; }
         public ICollection<Message> SentUserMessage { get; set; }

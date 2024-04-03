@@ -21,6 +21,8 @@ namespace Carpool.Domain.Database
         public DbSet<UserNotification> UserNotifications { get; set; }
         public DbSet<UserReview> UserReviews { get; set; }
         public DbSet<Message> Messages { get; set; }
+        public DbSet<UserReservation> UserReservations { get; set; }
+        public DbSet<Travel> Travels { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
