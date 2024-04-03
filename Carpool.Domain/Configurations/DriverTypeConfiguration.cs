@@ -20,7 +20,7 @@ namespace Carpool.Domain.Configurations
 
             builder.HasData(
                 new DriverType { DriverTypeID = 1, DriverTypeName = "Mamie au volant" },
-                new DriverType { DriverTypeID = 1, DriverTypeName = "As du volant" }
+                new DriverType { DriverTypeID = 2, DriverTypeName = "As du volant" }
             );
         }
     }
