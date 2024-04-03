@@ -14,7 +14,13 @@ namespace Carpool.Domain.Entities
         public string UserPassword { get; set; } = string.Empty;
         public string UserPhoneNumber { get; set; } = string.Empty;
 
+        // One-to-Many relationship
         public int StatusID { get; set; }
         public Status Status { get; set; }
+
+        // Many-to-many relationship
+        public ICollection<UserTravelPreference> UserTravelPreferences { get; set; }
+
+
     }
 }
