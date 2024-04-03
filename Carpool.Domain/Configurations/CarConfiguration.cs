@@ -26,6 +26,10 @@ namespace Carpool.Domain.Configurations
             .WithOne(u => u.Car)
             .HasForeignKey<User>(c => c.UserID);
 
+            builder.HasOne<Fuel>(c => c.Fuel)
+            .WithMany(f => f.Cars)
+            .HasForeignKey(c => c.FuelID);
+
         }
     }
 }

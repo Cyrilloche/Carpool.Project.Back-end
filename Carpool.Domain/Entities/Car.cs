@@ -17,5 +17,8 @@ namespace Carpool.Domain.Entities
 
         public int UserID { get; set; }
         public User User { get; set; }
+
+        public int FuelID { get; set; }
+        public Fuel Fuel { get; set; }
     }
 }

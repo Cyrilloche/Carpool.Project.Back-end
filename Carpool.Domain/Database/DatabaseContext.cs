@@ -15,6 +15,9 @@ namespace Carpool.Domain.Database
         public DbSet<Status> Statuses { get; set; }
         public DbSet<UserTravelPreference> UserTravelPreferences { get; set; }
         public DbSet<Car> Cars { get; set; }
+        public DbSet<Fuel> Fuels { get; set; }
+
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
