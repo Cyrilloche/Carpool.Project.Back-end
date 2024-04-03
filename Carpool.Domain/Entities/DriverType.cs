@@ -9,9 +9,6 @@ namespace Carpool.Domain.Entities
     {
         public int DriverTypeID { get; set; }
         public string DriverTypeName { get; set; } = string.Empty;
-
-        public ICollection<User> Users { get; set; }
-
-
+        public ICollection<User>? Users { get; set; }
     }
 }
