@@ -21,19 +21,13 @@ namespace Carpool.Domain.Entities
         public int DriverTypeID { get; set; }
         public DriverType DriverType { get; set; }
 
-        public int RewardID { get; set; }
-        public ICollection<UserReward> UserRewards { get; set; }
-
-
-
-
-
         public Car Car { get; set; }
 
 
 
         // Many-to-many relationship
         public ICollection<UserTravelPreference> UserTravelPreferences { get; set; }
+        public ICollection<UserReward> UserRewards { get; set; }
 
 
     }
