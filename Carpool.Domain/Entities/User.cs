@@ -31,5 +31,10 @@ namespace Carpool.Domain.Entities
         public ICollection<UserNotification> UserNotifications { get; set; }
         public ICollection<UserReview> ReceivedUserReview { get; set; }
         public ICollection<UserReview> SentUserReview { get; set; }
+        public ICollection<Message> SentUserMessage { get; set; }
+        public ICollection<Message> ReceivedUserMessage { get; set; }
+
+
+
     }
 }

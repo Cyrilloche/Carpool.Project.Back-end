@@ -20,10 +20,7 @@ namespace Carpool.Domain.Database
         public DbSet<UserReward> UserRewards { get; set; }
         public DbSet<UserNotification> UserNotifications { get; set; }
         public DbSet<UserReview> UserReviews { get; set; }
-
-
-
-
+        public DbSet<Message> Messages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
