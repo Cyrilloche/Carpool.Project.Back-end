@@ -28,6 +28,9 @@ namespace Carpool.Domain.Entities
         // Many-to-many relationship
         public ICollection<UserTravelPreference> UserTravelPreferences { get; set; }
         public ICollection<UserReward> UserRewards { get; set; }
+        public ICollection<UserNotification> UserNotifications { get; set; }
+
+
 
 
     }
