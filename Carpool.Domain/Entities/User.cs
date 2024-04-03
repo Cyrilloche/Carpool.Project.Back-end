@@ -18,6 +18,10 @@ namespace Carpool.Domain.Entities
         public int StatusID { get; set; }
         public Status Status { get; set; }
 
+        public Car Car { get; set; }
+
+
+
         // Many-to-many relationship
         public ICollection<UserTravelPreference> UserTravelPreferences { get; set; }
 
