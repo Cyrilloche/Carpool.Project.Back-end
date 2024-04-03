@@ -19,6 +19,9 @@ namespace Carpool.Domain.Database
         public DbSet<DriverType> DriverTypes { get; set; }
         public DbSet<UserReward> UserRewards { get; set; }
         public DbSet<UserNotification> UserNotifications { get; set; }
+        public DbSet<UserReview> UserReviews { get; set; }
+
+
 
 
 

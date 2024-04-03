@@ -29,9 +29,7 @@ namespace Carpool.Domain.Entities
         public ICollection<UserTravelPreference> UserTravelPreferences { get; set; }
         public ICollection<UserReward> UserRewards { get; set; }
         public ICollection<UserNotification> UserNotifications { get; set; }
-
-
-
-
+        public ICollection<UserReview> ReceivedUserReview { get; set; }
+        public ICollection<UserReview> SentUserReview { get; set; }
     }
 }
