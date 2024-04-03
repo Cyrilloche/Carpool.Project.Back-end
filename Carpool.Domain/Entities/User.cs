@@ -18,6 +18,11 @@ namespace Carpool.Domain.Entities
         public int StatusID { get; set; }
         public Status Status { get; set; }
 
+        public int DriverTypeID { get; set; }
+        public DriverType DriverType { get; set; }
+
+
+
         public Car Car { get; set; }
 
 
