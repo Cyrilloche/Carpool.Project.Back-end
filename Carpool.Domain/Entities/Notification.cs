@@ -7,8 +7,8 @@ namespace Carpool.Domain.Entities
 {
     public class Notification
     {
-        public int NotificationID { get; set; }
-        public string NotificationName { get; set; } = string.Empty;
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         public ICollection<UserNotification> UserNotifications { get; set; }
     }

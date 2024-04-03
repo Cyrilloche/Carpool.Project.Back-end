@@ -14,17 +14,17 @@ namespace Carpool.Domain.Configurations
         {
             builder.ToTable("user_reward");
 
-            builder.HasKey(ur => new { ur.UserID, ur.RewardID });
+            builder.HasKey(ur => new { ur.UserId, ur.RewardId });
 
             builder.Property(ur => ur.UserRewardDate).IsRequired();
 
             builder.HasOne<User>(ur => ur.User)
             .WithMany(u => u.UserRewards)
-            .HasForeignKey(ur => ur.UserID);
+            .HasForeignKey(ur => ur.UserId);
 
             builder.HasOne<Reward>(ur => ur.Reward)
             .WithMany(r => r.UserRewards)
-            .HasForeignKey(ur => ur.RewardID);
+            .HasForeignKey(ur => ur.RewardId);
         }
     }
 }

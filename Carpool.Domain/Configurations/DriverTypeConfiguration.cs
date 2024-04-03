@@ -14,13 +14,13 @@ namespace Carpool.Domain.Configurations
         {
             builder.ToTable("DriverType");
 
-            builder.HasKey(dt => dt.DriverTypeID);
+            builder.HasKey(dt => dt.Id);
 
-            builder.Property(dt => dt.DriverTypeName).IsRequired().HasMaxLength(50);
+            builder.Property(dt => dt.Name).IsRequired().HasMaxLength(50);
 
             builder.HasData(
-                new DriverType { DriverTypeID = 1, DriverTypeName = "Mamie au volant" },
-                new DriverType { DriverTypeID = 2, DriverTypeName = "As du volant" }
+                new DriverType { Id = 1, Name = "Mamie au volant" },
+                new DriverType { Id = 2, Name = "As du volant" }
             );
         }
     }

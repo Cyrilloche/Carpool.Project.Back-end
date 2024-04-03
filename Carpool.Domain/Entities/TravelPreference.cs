@@ -7,8 +7,8 @@ namespace Carpool.Domain.Entities
 {
     public class TravelPreference
     {
-        public int TravelPreferenceID { get; set; }
-        public string TravelPreferenceName { get; set; } = string.Empty;
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         public ICollection<UserTravelPreference> UserTravelPreferences { get; set; }
 

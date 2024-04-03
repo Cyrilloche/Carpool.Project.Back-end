@@ -7,9 +7,9 @@ namespace Carpool.Domain.Entities
 {
     public class UserTravelPreference
     {
-        public int UserID { get; set; }
+        public int UserId { get; set; }
         public User User { get; set; }
-        public int TravelPreferenceID { get; set; }
+        public int TravelPreferenceId { get; set; }
         public TravelPreference TravelPreference { get; set; }
     }
 }

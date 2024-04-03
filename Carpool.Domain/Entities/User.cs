@@ -7,19 +7,19 @@ namespace Carpool.Domain.Entities
 {
     public class User
     {
-        public int UserID { get; set; }
-        public string UserLastname { get; set; } = string.Empty;
-        public string UserFirstName { get; set; } = string.Empty;
-        public string UserEmail { get; set; } = string.Empty;
-        public string UserPassword { get; set; } = string.Empty;
-        public string UserPhoneNumber { get; set; } = string.Empty;
+        public int Id { get; set; }
+        public string Lastname { get; set; } = string.Empty;
+        public string FirstName { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+        public string PhoneNumber { get; set; } = string.Empty;
 
 
         // One-to-Many relationship
-        public int StatusID { get; set; }
+        public int StatusId { get; set; }
         public Status Status { get; set; }
 
-        public int DriverTypeID { get; set; }
+        public int DriverTypeId { get; set; }
         public DriverType DriverType { get; set; }
 
         public ICollection<Travel> Travels { get; set; }

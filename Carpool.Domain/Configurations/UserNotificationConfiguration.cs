@@ -14,15 +14,15 @@ namespace Carpool.Domain.Configurations
         {
             builder.ToTable("user_notification");
 
-            builder.HasKey(un => new { un.UserID, un.NotificationID });
+            builder.HasKey(un => new { un.UserId, un.NotificationId });
 
             builder.HasOne<User>(un => un.User)
             .WithMany(u => u.UserNotifications)
-            .HasForeignKey(un => un.UserID);
+            .HasForeignKey(un => un.UserId);
 
             builder.HasOne<Notification>(un => un.Notification)
             .WithMany(n => n.UserNotifications)
-            .HasForeignKey(un => un.NotificationID);
+            .HasForeignKey(un => un.NotificationId);
         }
     }
 }

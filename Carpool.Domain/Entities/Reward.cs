@@ -7,9 +7,9 @@ namespace Carpool.Domain.Entities
 {
     public class Reward
     {
-        public int RewardID { get; set; }
-        public string RewardName { get; set; } = string.Empty;
-        public string RewardPicture { get; set; } = string.Empty;
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Picture { get; set; } = string.Empty;
 
         public ICollection<UserReward> UserRewards { get; set; }
     }

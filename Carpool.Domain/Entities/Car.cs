@@ -7,12 +7,12 @@ namespace Carpool.Domain.Entities
 {
     public class Car
     {
-        public int CarID { get; set; }
-        public string CarBrand { get; set; } = string.Empty;
-        public string CarModel { get; set; } = string.Empty;
-        public string CarPaintColor { get; set; } = string.Empty;
-        public string CarRegistration { get; set; } = string.Empty;
-        public string CarPicture { get; set; } = string.Empty;
+        public int Id { get; set; }
+        public string Brand { get; set; } = string.Empty;
+        public string Model { get; set; } = string.Empty;
+        public string PaintColor { get; set; } = string.Empty;
+        public string Registration { get; set; } = string.Empty;
+        public string Picture { get; set; } = string.Empty;
 
 
         public int UserID { get; set; }

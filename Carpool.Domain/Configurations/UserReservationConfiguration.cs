@@ -14,7 +14,7 @@ namespace Carpool.Domain.Configurations
         {
             builder.ToTable("user_reservation");
 
-            builder.HasKey(ur => new { ur.PassengerID, ur.TravelID });
+            builder.HasKey(ur => new { ur.PassengerId, ur.TravelId });
 
             builder.Property(ur => ur.ReservationDate).IsRequired();
             builder.Property(ur => ur.ResponseDate).IsRequired();
@@ -22,11 +22,11 @@ namespace Carpool.Domain.Configurations
 
             builder.HasOne<User>(ur => ur.Passenger)
             .WithMany(p => p.UserReservations)
-            .HasForeignKey(ur => ur.PassengerID);
+            .HasForeignKey(ur => ur.PassengerId);
 
             builder.HasOne<Travel>(ur => ur.Travel)
             .WithMany(t => t.UserReservations)
-            .HasForeignKey(ur => ur.TravelID);
+            .HasForeignKey(ur => ur.TravelId);
         }
     }
 }

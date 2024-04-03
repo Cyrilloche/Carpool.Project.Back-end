@@ -7,7 +7,7 @@ namespace Carpool.Domain.Entities
 {
     public class Travel
     {
-        public int TravelId { get; set; }
+        public int Id { get; set; }
         public TimeOnly TimeDeparture { get; set; }
         public DateOnly DateDeparture { get; set; }
         public int AvailablePlace { get; set; }

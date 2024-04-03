@@ -14,18 +14,18 @@ namespace Carpool.Domain.Configurations
         {
             builder.ToTable("user_review");
 
-            builder.HasKey(ur => ur.UserReviewID);
+            builder.HasKey(ur => ur.Id);
 
-            builder.Property(ur => ur.UserNote).IsRequired();
-            builder.Property(ur => ur.UserComment).HasMaxLength(1000);
+            builder.Property(ur => ur.Note).IsRequired();
+            builder.Property(ur => ur.Comment).HasMaxLength(1000);
 
             builder.HasOne<User>(ur => ur.UserSender)
             .WithMany(u => u.ReceivedUserReview)
-            .HasForeignKey(ur => ur.UserSenderID);
+            .HasForeignKey(ur => ur.UserSenderId);
 
             builder.HasOne<User>(ur => ur.UserReceiver)
             .WithMany(u => u.SentUserReview)
-            .HasForeignKey(ur => ur.UserReceiverID);
+            .HasForeignKey(ur => ur.UserReceiverId);
         }
     }
 }

@@ -14,13 +14,13 @@ namespace Carpool.Domain.Configurations
         {
             builder.ToTable("Status");
 
-            builder.HasKey(s => s.StatusID);
-            builder.Property(s => s.StatusName).IsRequired().HasMaxLength(50);
+            builder.HasKey(s => s.Id);
+            builder.Property(s => s.Name).IsRequired().HasMaxLength(50);
 
             builder.HasData(
-                new Status { StatusID = 1, StatusName = "Étudiant" },
-                new Status { StatusID = 2, StatusName = "Intervenants" },
-                new Status { StatusID = 3, StatusName = "Professeur" }
+                new Status { Id = 1, Name = "Étudiant" },
+                new Status { Id = 2, Name = "Intervenants" },
+                new Status { Id = 3, Name = "Professeur" }
             );
         }
     }

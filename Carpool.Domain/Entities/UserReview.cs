@@ -7,13 +7,13 @@ namespace Carpool.Domain.Entities
 {
     public class UserReview
     {
-        public int UserReviewID { get; set; }
-        public byte UserNote { get; set; }
-        public string? UserComment { get; set; }
+        public int Id { get; set; }
+        public byte Note { get; set; }
+        public string? Comment { get; set; }
 
-        public int UserSenderID { get; set; }
+        public int UserSenderId { get; set; }
         public User UserSender { get; set; }
-        public int UserReceiverID { get; set; }
+        public int UserReceiverId { get; set; }
         public User UserReceiver { get; set; }
     }
 }

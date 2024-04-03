@@ -14,17 +14,17 @@ namespace Carpool.Domain.Configurations
         {
             builder.ToTable("Car");
 
-            builder.HasKey(c => c.CarID);
+            builder.HasKey(c => c.Id);
 
-            builder.Property(c => c.CarBrand).IsRequired().HasMaxLength(25);
-            builder.Property(c => c.CarModel).IsRequired().HasMaxLength(25);
-            builder.Property(c => c.CarPaintColor).IsRequired().HasMaxLength(25);
-            builder.Property(c => c.CarRegistration).IsRequired().HasMaxLength(25);
-            builder.Property(c => c.CarPicture).IsRequired().HasMaxLength(255);
+            builder.Property(c => c.Brand).IsRequired().HasMaxLength(25);
+            builder.Property(c => c.Model).IsRequired().HasMaxLength(25);
+            builder.Property(c => c.PaintColor).IsRequired().HasMaxLength(25);
+            builder.Property(c => c.Registration).IsRequired().HasMaxLength(25);
+            builder.Property(c => c.Picture).IsRequired().HasMaxLength(255);
 
             builder.HasOne<User>(c => c.User)
             .WithOne(u => u.Car)
-            .HasForeignKey<User>(c => c.UserID);
+            .HasForeignKey<User>(c => c.Id);
 
             builder.HasOne<Fuel>(c => c.Fuel)
             .WithMany(f => f.Cars)

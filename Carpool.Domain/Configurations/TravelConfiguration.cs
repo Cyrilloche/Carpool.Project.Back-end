@@ -14,7 +14,7 @@ namespace Carpool.Domain.Configurations
         {
             builder.ToTable("travel");
 
-            builder.HasKey(t => t.TravelId);
+            builder.HasKey(t => t.Id);
 
             builder.Property(t => t.TimeDeparture).IsRequired();
             builder.Property(t => t.DateDeparture).IsRequired();

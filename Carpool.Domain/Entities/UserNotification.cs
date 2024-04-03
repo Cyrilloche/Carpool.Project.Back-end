@@ -7,9 +7,9 @@ namespace Carpool.Domain.Entities
 {
     public class UserNotification
     {
-        public int UserID { get; set; }
+        public int UserId { get; set; }
         public User User { get; set; }
-        public int NotificationID { get; set; }
+        public int NotificationId { get; set; }
         public Notification Notification { get; set; }
     }
 }

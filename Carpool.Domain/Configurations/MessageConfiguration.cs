@@ -14,16 +14,16 @@ namespace Carpool.Domain.Configurations
         {
             builder.ToTable("message");
 
-            builder.HasKey(m => m.MessageID);
+            builder.HasKey(m => m.Id);
             builder.Property(m => m.MessageContent).IsRequired().HasMaxLength(1000);
 
             builder.HasOne<User>(m => m.UserSender)
             .WithMany(u => u.SentUserMessage)
-            .HasForeignKey(m => m.SenderUserID);
+            .HasForeignKey(m => m.SenderUserId);
 
             builder.HasOne<User>(m => m.UserReceiver)
             .WithMany(u => u.ReceivedUserMessage)
-            .HasForeignKey(m => m.ReceiverUserID);
+            .HasForeignKey(m => m.ReceiverUserId);
         }
     }
 }

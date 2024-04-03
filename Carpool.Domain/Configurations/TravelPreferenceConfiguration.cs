@@ -14,9 +14,9 @@ namespace Carpool.Domain.Configurations
         {
             builder.ToTable("TravelPreference");
 
-            builder.HasKey(tp => tp.TravelPreferenceID);
+            builder.HasKey(tp => tp.Id);
 
-            builder.Property(tp => tp.TravelPreferenceName).IsRequired().HasMaxLength(50);
+            builder.Property(tp => tp.Name).IsRequired().HasMaxLength(50);
         }
     }
 }

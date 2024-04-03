@@ -14,15 +14,15 @@ namespace Carpool.Domain.Configurations
         {
             builder.ToTable("UserTravelPreference");
 
-            builder.HasKey(utp => new { utp.UserID, utp.TravelPreferenceID });
+            builder.HasKey(utp => new { utp.UserId, utp.TravelPreferenceId });
 
             builder.HasOne<User>(utp => utp.User)
             .WithMany(u => u.UserTravelPreferences)
-            .HasForeignKey(utp => utp.UserID);
+            .HasForeignKey(utp => utp.UserId);
 
             builder.HasOne<TravelPreference>(utp => utp.TravelPreference)
             .WithMany(tp => tp.UserTravelPreferences)
-            .HasForeignKey(utp => utp.TravelPreferenceID);
+            .HasForeignKey(utp => utp.TravelPreferenceId);
         }
     }
 }
