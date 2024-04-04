@@ -24,6 +24,6 @@ namespace Carpool.Domain.Entities
 
         public ICollection<UserReservation> UserReservations { get; set; }
         public ICollection<TravelFilter> TravelFilters { get; set; }
-        public ICollection<TravelAdress> TravelAdresses { get; set; }
+        public ICollection<TravelStage> TravelStages { get; set; }
     }
 }

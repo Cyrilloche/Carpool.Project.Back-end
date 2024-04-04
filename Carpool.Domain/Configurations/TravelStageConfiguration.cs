@@ -8,9 +8,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Carpool.Domain.Configurations
 {
-    public class TravelAdressConfiguration : IEntityTypeConfiguration<TravelAdress>
+    public class TravelStageConfiguration : IEntityTypeConfiguration<TravelStage>
     {
-        public void Configure(EntityTypeBuilder<TravelAdress> builder)
+        public void Configure(EntityTypeBuilder<TravelStage> builder)
         {
             builder.ToTable("travel_adress");
 

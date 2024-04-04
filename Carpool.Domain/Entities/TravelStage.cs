@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Carpool.Domain.Entities
 {
-    public class TravelAdress
+    public class TravelStage
     {
         public int TravelId { get; set; }
         public Travel Travel { get; set; }
