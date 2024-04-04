@@ -24,6 +24,14 @@ namespace Carpool.Domain.Configurations
             builder.HasOne<User>(t => t.Publisher)
             .WithMany(p => p.Travels)
             .HasForeignKey(t => t.PublisherId);
+
+            builder.HasOne<Adress>(t => t.GoingAdress)
+            .WithMany(go => go.GoingTravel)
+            .HasForeignKey(t => t.GoingAdressId);
+
+            builder.HasOne<Adress>(t => t.ReturnAdress)
+            .WithMany(rt => rt.ReturnTravel)
+            .HasForeignKey(t => t.ReturnAdressId);
         }
     }
 }

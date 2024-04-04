@@ -14,5 +14,9 @@ namespace Carpool.Domain.Entities
 
         public int SchoolId { get; set; }
         public School School { get; set; }
+
+        public ICollection<Travel> GoingTravel { get; set; }
+        public ICollection<Travel> ReturnTravel { get; set; }
+        public ICollection<TravelAdress> TravelAdresses { get; set; }
     }
 }

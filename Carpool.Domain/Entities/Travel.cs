@@ -16,10 +16,14 @@ namespace Carpool.Domain.Entities
         public int PublisherId { get; set; }
         public User Publisher { get; set; }
 
+        public int GoingAdressId { get; set; }
+        public Adress GoingAdress { get; set; }
+
+        public int ReturnAdressId { get; set; }
+        public Adress ReturnAdress { get; set; }
+
         public ICollection<UserReservation> UserReservations { get; set; }
         public ICollection<TravelFilter> TravelFilters { get; set; }
-
-
-
+        public ICollection<TravelAdress> TravelAdresses { get; set; }
     }
 }
