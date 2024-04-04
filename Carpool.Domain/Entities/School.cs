@@ -11,5 +11,6 @@ namespace Carpool.Domain.Entities
         public string Name { get; set; } = string.Empty;
 
         public ICollection<Classroom> Classrooms { get; set; }
+        public ICollection<Adress> Adresses { get; set; }
     }
 }
