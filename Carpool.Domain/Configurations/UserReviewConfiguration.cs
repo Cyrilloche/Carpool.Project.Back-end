@@ -21,11 +21,13 @@ namespace Carpool.Domain.Configurations
 
             builder.HasOne<User>(ur => ur.UserSender)
             .WithMany(u => u.ReceivedUserReview)
-            .HasForeignKey(ur => ur.UserSenderId);
+            .HasForeignKey(ur => ur.UserSenderId)
+            .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne<User>(ur => ur.UserReceiver)
             .WithMany(u => u.SentUserReview)
-            .HasForeignKey(ur => ur.UserReceiverId);
+            .HasForeignKey(ur => ur.UserReceiverId)
+            .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

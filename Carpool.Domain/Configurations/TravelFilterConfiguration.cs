@@ -18,11 +18,14 @@ namespace Carpool.Domain.Configurations
 
             builder.HasOne<Travel>(tf => tf.Travel)
             .WithMany(t => t.TravelFilters)
-            .HasForeignKey(tf => tf.TravelId);
+            .HasForeignKey(tf => tf.TravelId)
+            .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne<Filter>(tf => tf.Filter)
             .WithMany(f => f.TravelFilters)
-            .HasForeignKey(tf => tf.FilterId);
+            .HasForeignKey(tf => tf.FilterId)
+            .OnDelete(DeleteBehavior.Cascade);
+
         }
     }
 }

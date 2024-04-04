@@ -18,10 +18,12 @@ namespace Carpool.Domain.Configurations
 
             builder.HasOne<User>(un => un.User)
             .WithMany(u => u.UserNotifications)
-            .HasForeignKey(un => un.UserId);
+            .HasForeignKey(un => un.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne<Notification>(un => un.Notification)
             .WithMany(n => n.UserNotifications)
+            .OnDelete(DeleteBehavior.Cascade)
             .HasForeignKey(un => un.NotificationId);
         }
     }

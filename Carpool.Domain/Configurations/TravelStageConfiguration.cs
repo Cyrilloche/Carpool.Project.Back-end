@@ -17,12 +17,16 @@ namespace Carpool.Domain.Configurations
             builder.HasKey(ta => new { ta.TravelId, ta.AdressId });
 
             builder.HasOne<Travel>(ta => ta.Travel)
-            .WithMany(t => t.TravelAdresses)
-            .HasForeignKey(ta => ta.TravelId);
+            .WithMany(t => t.TravelStages)
+            .HasForeignKey(ta => ta.TravelId)
+            .OnDelete(DeleteBehavior.Cascade);
+
 
             builder.HasOne<Adress>(ta => ta.Adress)
-            .WithMany(a => a.TravelAdresses)
-            .HasForeignKey(ta => ta.AdressId);
+            .WithMany(a => a.TravelStages)
+            .HasForeignKey(ta => ta.AdressId)
+            .OnDelete(DeleteBehavior.Cascade);
+
         }
     }
 }

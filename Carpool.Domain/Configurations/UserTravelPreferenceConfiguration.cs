@@ -18,11 +18,13 @@ namespace Carpool.Domain.Configurations
 
             builder.HasOne<User>(utp => utp.User)
             .WithMany(u => u.UserTravelPreferences)
-            .HasForeignKey(utp => utp.UserId);
+            .HasForeignKey(utp => utp.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne<TravelPreference>(utp => utp.TravelPreference)
             .WithMany(tp => tp.UserTravelPreferences)
-            .HasForeignKey(utp => utp.TravelPreferenceId);
+            .HasForeignKey(utp => utp.TravelPreferenceId)
+            .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

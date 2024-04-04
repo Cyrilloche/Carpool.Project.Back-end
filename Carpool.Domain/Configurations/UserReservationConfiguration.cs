@@ -22,11 +22,13 @@ namespace Carpool.Domain.Configurations
 
             builder.HasOne<User>(ur => ur.Passenger)
             .WithMany(p => p.UserReservations)
-            .HasForeignKey(ur => ur.PassengerId);
+            .HasForeignKey(ur => ur.PassengerId)
+            .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne<Travel>(ur => ur.Travel)
             .WithMany(t => t.UserReservations)
-            .HasForeignKey(ur => ur.TravelId);
+            .HasForeignKey(ur => ur.TravelId)
+            .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
