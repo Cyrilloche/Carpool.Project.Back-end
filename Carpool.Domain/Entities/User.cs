@@ -22,8 +22,8 @@ namespace Carpool.Domain.Entities
         public int DriverTypeId { get; set; }
         public DriverType DriverType { get; set; }
 
-        public ICollection<Travel> Travels { get; set; }
-
+        public int ClassroomId { get; set; }
+        public Classroom Classroom { get; set; }
 
         // One-to-one relationship
         public Car Car { get; set; }
@@ -40,6 +40,7 @@ namespace Carpool.Domain.Entities
         public ICollection<UserReview> SentUserReview { get; set; }
         public ICollection<Message> SentUserMessage { get; set; }
         public ICollection<Message> ReceivedUserMessage { get; set; }
+        public ICollection<Travel> Travels { get; set; }
 
 
 

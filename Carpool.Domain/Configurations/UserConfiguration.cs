@@ -34,6 +34,11 @@ namespace Carpool.Domain.Configurations
             builder.HasOne<DriverType>(u => u.DriverType)
             .WithMany(dt => dt.Users)
             .HasForeignKey(u => u.DriverTypeId);
+
+            // Configure one-to-many relationship between User and Classroom
+            builder.HasOne<Classroom>(u => u.Classroom)
+            .WithMany(c => c.Users)
+            .HasForeignKey(u => u.ClassroomId);
         }
     }
 }

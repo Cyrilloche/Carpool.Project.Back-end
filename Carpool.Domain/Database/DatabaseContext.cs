@@ -25,7 +25,8 @@ namespace Carpool.Domain.Database
         public DbSet<Travel> Travels { get; set; }
         public DbSet<TravelFilter> TravelFilters { get; set; }
         public DbSet<Filter> Filters { get; set; }
-
+        public DbSet<Classroom> Classrooms { get; set; }
+        public DbSet<School> Schools { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
