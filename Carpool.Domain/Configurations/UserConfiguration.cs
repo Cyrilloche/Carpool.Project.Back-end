@@ -21,9 +21,12 @@ namespace Carpool.Domain.Configurations
             // Configure Property
             builder.Property(u => u.Lastname).IsRequired().HasMaxLength(50);
             builder.Property(u => u.FirstName).IsRequired().HasMaxLength(30);
-            builder.Property(u => u.Email).IsRequired().HasMaxLength(255);
+            builder.Property(u => u.Email).IsRequired().HasColumnType("varchar").HasMaxLength(255);
             builder.Property(u => u.Password).IsRequired().HasMaxLength(255);
             builder.Property(u => u.PhoneNumber).IsRequired().HasMaxLength(25);
+
+            // Configure index on column
+            builder.HasIndex(u => u.Email).IsUnique();
 
             // Configure one-to-many relationship between User and Status
             builder.HasOne<Status>(u => u.Status)
