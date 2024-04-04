@@ -17,6 +17,9 @@ namespace Carpool.Domain.Entities
         public User Publisher { get; set; }
 
         public ICollection<UserReservation> UserReservations { get; set; }
+        public ICollection<TravelFilter> TravelFilters { get; set; }
+
+
 
     }
 }
