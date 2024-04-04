@@ -15,7 +15,7 @@ namespace Carpool.Domain.Configurations
             builder.ToTable("message");
 
             builder.HasKey(m => m.Id);
-            builder.Property(m => m.MessageContent).IsRequired().HasMaxLength(1000);
+            builder.Property(m => m.MessageContent).IsRequired().HasColumnType("text");
 
             builder.HasOne<User>(m => m.UserSender)
             .WithMany(u => u.SentUserMessage)

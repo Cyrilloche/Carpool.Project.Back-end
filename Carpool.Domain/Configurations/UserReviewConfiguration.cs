@@ -17,7 +17,7 @@ namespace Carpool.Domain.Configurations
             builder.HasKey(ur => ur.Id);
 
             builder.Property(ur => ur.Note).IsRequired();
-            builder.Property(ur => ur.Comment).HasMaxLength(1000);
+            builder.Property(ur => ur.Comment).HasColumnType("text");
 
             builder.HasOne<User>(ur => ur.UserSender)
             .WithMany(u => u.ReceivedUserReview)
