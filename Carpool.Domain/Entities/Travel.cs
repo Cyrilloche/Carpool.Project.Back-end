@@ -22,8 +22,8 @@ namespace Carpool.Domain.Entities
         public int ReturnAdressId { get; set; }
         public Adress ReturnAdress { get; set; }
 
-        public ICollection<UserReservation> UserReservations { get; set; }
-        public ICollection<TravelFilter> TravelFilters { get; set; }
-        public ICollection<TravelStage> TravelStages { get; set; }
+        public virtual ICollection<UserReservation> UserReservations { get; set; }
+        public virtual ICollection<TravelFilter> TravelFilters { get; set; }
+        public virtual ICollection<TravelStage> TravelStages { get; set; }
     }
 }

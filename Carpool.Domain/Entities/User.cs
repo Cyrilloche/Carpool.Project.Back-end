@@ -29,18 +29,18 @@ namespace Carpool.Domain.Entities
         public Car Car { get; set; }
 
         // Many-to-many relationship
-        public ICollection<UserTravelPreference> UserTravelPreferences { get; set; }
-        public ICollection<UserReward> UserRewards { get; set; }
-        public ICollection<UserNotification> UserNotifications { get; set; }
-        public ICollection<UserReservation> UserReservations { get; set; }
+        public virtual ICollection<UserTravelPreference> UserTravelPreferences { get; set; }
+        public virtual ICollection<UserReward> UserRewards { get; set; }
+        public virtual ICollection<UserNotification> UserNotifications { get; set; }
+        public virtual ICollection<UserReservation> UserReservations { get; set; }
 
 
         // Many-to-One relationship
-        public ICollection<UserReview> ReceivedUserReview { get; set; }
-        public ICollection<UserReview> SentUserReview { get; set; }
-        public ICollection<Message> SentUserMessage { get; set; }
-        public ICollection<Message> ReceivedUserMessage { get; set; }
-        public ICollection<Travel> Travels { get; set; }
+        public virtual ICollection<UserReview> ReceivedUserReview { get; set; }
+        public virtual ICollection<UserReview> SentUserReview { get; set; }
+        public virtual ICollection<Message> SentUserMessage { get; set; }
+        public virtual ICollection<Message> ReceivedUserMessage { get; set; }
+        public virtual ICollection<Travel> Travels { get; set; }
 
 
 

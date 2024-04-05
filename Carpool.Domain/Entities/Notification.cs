@@ -10,6 +10,6 @@ namespace Carpool.Domain.Entities
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
 
-        public ICollection<UserNotification> UserNotifications { get; set; }
+        public virtual ICollection<UserNotification> UserNotifications { get; set; }
     }
 }

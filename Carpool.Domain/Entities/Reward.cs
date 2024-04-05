@@ -11,6 +11,6 @@ namespace Carpool.Domain.Entities
         public string Name { get; set; } = string.Empty;
         public string Picture { get; set; } = string.Empty;
 
-        public ICollection<UserReward> UserRewards { get; set; }
+        public virtual ICollection<UserReward> UserRewards { get; set; }
     }
 }
