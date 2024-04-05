@@ -15,7 +15,12 @@ namespace Carpool.Domain.Configurations
             builder.ToTable("classroom");
 
             builder.HasKey(c => c.Id);
-            builder.Property(c => c.Name).IsRequired().HasMaxLength(50);
+            builder.Property(c => c.Id)
+                .HasColumnType("int");
+            builder.Property(c => c.Name)
+                .HasColumnType("varchar")
+                .HasMaxLength(50)
+                .IsRequired();
 
             builder.HasOne<School>(c => c.School)
             .WithMany(s => s.Classrooms)

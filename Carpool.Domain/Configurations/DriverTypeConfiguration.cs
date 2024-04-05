@@ -15,8 +15,12 @@ namespace Carpool.Domain.Configurations
             builder.ToTable("DriverType");
 
             builder.HasKey(dt => dt.Id);
-
-            builder.Property(dt => dt.Name).IsRequired().HasMaxLength(50);
+            builder.Property(dt => dt.Id)
+                .HasColumnType("int");
+            builder.Property(dt => dt.Name)
+                .HasColumnType("varchar")
+                .HasMaxLength(50)
+                .IsRequired();
 
             builder.HasData(
                 new DriverType { Id = 1, Name = "Mamie au volant" },

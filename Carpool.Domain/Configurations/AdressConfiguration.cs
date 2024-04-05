@@ -15,13 +15,23 @@ namespace Carpool.Domain.Configurations
             builder.ToTable("adress");
 
             builder.HasKey(a => a.Id);
-            builder.Property(a => a.AdressName).IsRequired().HasMaxLength(50);
-            builder.Property(a => a.City).IsRequired().HasMaxLength(50);
-            builder.Property(a => a.PostalCode).IsRequired();
+            builder.Property(a => a.Id)
+                .HasColumnType("int");
+            builder.Property(a => a.AdressName)
+                .HasColumnType("varchar")
+                .HasMaxLength(50)
+                .IsRequired();
+            builder.Property(a => a.City)
+                .HasColumnType("varchar")
+                .HasMaxLength(50)
+                .IsRequired();
+            builder.Property(a => a.PostalCode)
+                .HasColumnType("tinyint")
+                .IsRequired();
 
             builder.HasOne<School>(a => a.School)
-            .WithMany(s => s.Adresses)
-            .HasForeignKey(a => a.SchoolId);
+                .WithMany(s => s.Adresses)
+                .HasForeignKey(a => a.SchoolId);
         }
     }
 }

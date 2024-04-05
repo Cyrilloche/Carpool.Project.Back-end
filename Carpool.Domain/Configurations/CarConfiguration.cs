@@ -15,12 +15,28 @@ namespace Carpool.Domain.Configurations
             builder.ToTable("Car");
 
             builder.HasKey(c => c.Id);
-
-            builder.Property(c => c.Brand).IsRequired().HasMaxLength(25);
-            builder.Property(c => c.Model).IsRequired().HasMaxLength(25);
-            builder.Property(c => c.PaintColor).IsRequired().HasMaxLength(25);
-            builder.Property(c => c.Registration).IsRequired().HasMaxLength(25);
-            builder.Property(c => c.Picture).IsRequired().HasMaxLength(255);
+            builder.Property(c => c.Id)
+                .HasColumnType("int");
+            builder.Property(c => c.Brand)
+                .HasColumnType("varchar")
+                .HasMaxLength(25)
+                .IsRequired();
+            builder.Property(c => c.Model)
+                .HasColumnType("varchar")
+                .HasMaxLength(25)
+                .IsRequired();
+            builder.Property(c => c.PaintColor)
+                .HasColumnType("varchar")
+                .HasMaxLength(25)
+                .IsRequired();
+            builder.Property(c => c.Registration)
+                .HasColumnType("varchar")
+                .HasMaxLength(25)
+                .IsRequired();
+            builder.Property(c => c.Picture)
+                .HasColumnType("varchar")
+                .HasMaxLength(255)
+                .IsRequired();
 
             builder.HasOne<User>(c => c.User)
             .WithOne(u => u.Car)
