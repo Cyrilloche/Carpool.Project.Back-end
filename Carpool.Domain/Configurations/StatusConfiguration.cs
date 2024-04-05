@@ -12,10 +12,15 @@ namespace Carpool.Domain.Configurations
     {
         public void Configure(EntityTypeBuilder<Status> builder)
         {
-            builder.ToTable("Status");
+            builder.ToTable("status");
 
             builder.HasKey(s => s.Id);
-            builder.Property(s => s.Name).IsRequired().HasMaxLength(50);
+            builder.Property(s => s.Id)
+                .HasColumnType("int");
+            builder.Property(s => s.Name)
+                .HasColumnType("varchar")
+                .HasMaxLength(50)
+                .IsRequired();
 
             builder.HasData(
                 new Status { Id = 1, Name = "Étudiant" },

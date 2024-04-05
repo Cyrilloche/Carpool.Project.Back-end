@@ -12,11 +12,15 @@ namespace Carpool.Domain.Configurations
     {
         public void Configure(EntityTypeBuilder<TravelPreference> builder)
         {
-            builder.ToTable("TravelPreference");
+            builder.ToTable("travelPreference");
 
             builder.HasKey(tp => tp.Id);
-
-            builder.Property(tp => tp.Name).IsRequired().HasMaxLength(50);
+            builder.Property(tp => tp.Id)
+                .HasColumnType("int");
+            builder.Property(tp => tp.Name)
+                .HasColumnType("varchar")
+                .HasMaxLength(50)
+                .IsRequired();
         }
     }
 }

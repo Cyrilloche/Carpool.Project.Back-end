@@ -12,7 +12,7 @@ namespace Carpool.Domain.Configurations
     {
         public void Configure(EntityTypeBuilder<DriverType> builder)
         {
-            builder.ToTable("DriverType");
+            builder.ToTable("driverType");
 
             builder.HasKey(dt => dt.Id);
             builder.Property(dt => dt.Id)

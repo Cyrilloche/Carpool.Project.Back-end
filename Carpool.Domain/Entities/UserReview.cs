@@ -8,7 +8,7 @@ namespace Carpool.Domain.Entities
     public class UserReview
     {
         public int Id { get; set; }
-        public byte Note { get; set; }
+        public int Note { get; set; }
         public string? Comment { get; set; }
 
         public int UserSenderId { get; set; }

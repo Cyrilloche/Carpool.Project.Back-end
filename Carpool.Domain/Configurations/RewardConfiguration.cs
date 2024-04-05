@@ -15,7 +15,12 @@ namespace Carpool.Domain.Configurations
             builder.ToTable("reward");
 
             builder.HasKey(r => r.Id);
-            builder.Property(r => r.Name).IsRequired().HasMaxLength(50);
+            builder.Property(r => r.Id)
+                .HasColumnType("int");
+            builder.Property(r => r.Name)
+                .HasColumnType("varchar")
+                .HasMaxLength(50)
+                .IsRequired();
         }
     }
 }

@@ -16,7 +16,9 @@ namespace Carpool.Domain.Configurations
 
             builder.HasKey(ur => new { ur.UserId, ur.RewardId });
 
-            builder.Property(ur => ur.UserRewardDate).IsRequired();
+            builder.Property(ur => ur.UserRewardDate)
+                .HasColumnType("date")
+                .IsRequired();
 
             builder.HasOne<User>(ur => ur.User)
             .WithMany(u => u.UserRewards)

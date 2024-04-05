@@ -16,9 +16,15 @@ namespace Carpool.Domain.Configurations
 
             builder.HasKey(ur => new { ur.PassengerId, ur.TravelId });
 
-            builder.Property(ur => ur.ReservationDate).IsRequired();
-            builder.Property(ur => ur.ResponseDate).IsRequired();
-            builder.Property(ur => ur.Acceptation).IsRequired();
+            builder.Property(ur => ur.ReservationDate)
+                .HasColumnType("datetime")
+                .IsRequired();
+            builder.Property(ur => ur.ResponseDate)
+                .HasColumnType("datetime")
+                .IsRequired();
+            builder.Property(ur => ur.Acceptation)
+                .HasColumnType("tinyint(1)")
+                .IsRequired();
 
             builder.HasOne<User>(ur => ur.Passenger)
             .WithMany(p => p.UserReservations)

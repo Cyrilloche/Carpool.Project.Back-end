@@ -12,7 +12,7 @@ namespace Carpool.Domain.Configurations
     {
         public void Configure(EntityTypeBuilder<UserTravelPreference> builder)
         {
-            builder.ToTable("UserTravelPreference");
+            builder.ToTable("user_travelPreference");
 
             builder.HasKey(utp => new { utp.UserId, utp.TravelPreferenceId });
 

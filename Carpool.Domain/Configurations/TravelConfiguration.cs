@@ -15,11 +15,20 @@ namespace Carpool.Domain.Configurations
             builder.ToTable("travel");
 
             builder.HasKey(t => t.Id);
-
-            builder.Property(t => t.TimeDeparture).IsRequired();
-            builder.Property(t => t.DateDeparture).IsRequired();
-            builder.Property(t => t.CreationDate).IsRequired();
-            builder.Property(t => t.AvailablePlace).IsRequired();
+            builder.Property(t => t.Id)
+                .HasColumnType("int");
+            builder.Property(t => t.TimeDeparture)
+                .HasColumnType("time")
+                .IsRequired();
+            builder.Property(t => t.DateDeparture)
+                .HasColumnType("date")
+                .IsRequired();
+            builder.Property(t => t.CreationDate)
+                .HasColumnType("datetime")
+                .IsRequired();
+            builder.Property(t => t.AvailablePlace)
+                .HasColumnType("tinyint")
+                .IsRequired();
 
             builder.HasOne<User>(t => t.Publisher)
             .WithMany(p => p.Travels)

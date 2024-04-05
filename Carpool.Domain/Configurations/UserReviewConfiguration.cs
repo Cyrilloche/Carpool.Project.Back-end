@@ -15,9 +15,13 @@ namespace Carpool.Domain.Configurations
             builder.ToTable("user_review");
 
             builder.HasKey(ur => ur.Id);
-
-            builder.Property(ur => ur.Note).IsRequired();
-            builder.Property(ur => ur.Comment).HasColumnType("text");
+            builder.Property(ur => ur.Id)
+                .HasColumnType("int");
+            builder.Property(ur => ur.Note)
+                .HasColumnType("tinyint")
+                .IsRequired();
+            builder.Property(ur => ur.Comment)
+                .HasColumnType("text");
 
             builder.HasOne<User>(ur => ur.UserSender)
             .WithMany(u => u.ReceivedUserReview)

@@ -13,17 +13,34 @@ namespace Carpool.Domain.Configurations
         public void Configure(EntityTypeBuilder<User> builder)
         {
             // Named the table of entity
-            builder.ToTable("User");
+            builder.ToTable("user");
 
             // Configure PrimaryKey
             builder.HasKey(u => u.Id);
 
             // Configure Property
-            builder.Property(u => u.Lastname).IsRequired().HasMaxLength(50);
-            builder.Property(u => u.FirstName).IsRequired().HasMaxLength(30);
-            builder.Property(u => u.Email).IsRequired().HasColumnType("varchar").HasMaxLength(255);
-            builder.Property(u => u.Password).IsRequired().HasMaxLength(255);
-            builder.Property(u => u.PhoneNumber).IsRequired().HasMaxLength(25);
+            builder.Property(u => u.Id)
+                .HasColumnType("int");
+            builder.Property(u => u.Lastname)
+                .HasColumnType("varchar")
+                .HasMaxLength(50)
+                .IsRequired();
+            builder.Property(u => u.FirstName)
+                .HasColumnType("varchar")
+                .HasMaxLength(30)
+                .IsRequired();
+            builder.Property(u => u.Email)
+                .HasColumnType("varchar")
+                .HasMaxLength(191) // Have to put 191 beacause index
+                .IsRequired();
+            builder.Property(u => u.Password)
+                .HasColumnType("varchar")
+                .HasMaxLength(255)
+                .IsRequired();
+            builder.Property(u => u.PhoneNumber)
+                .HasColumnType("varchar")
+                .HasMaxLength(25)
+                .IsRequired();
 
             // Configure index on column
             builder.HasIndex(u => u.Email).IsUnique();

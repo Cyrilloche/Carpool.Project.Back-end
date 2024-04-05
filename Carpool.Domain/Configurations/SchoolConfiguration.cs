@@ -15,8 +15,13 @@ namespace Carpool.Domain.Configurations
             builder.ToTable("school");
 
             builder.HasKey(s => s.Id);
+            builder.Property(s => s.Id)
+                .HasColumnType("int");
 
-            builder.Property(c => c.Name).IsRequired().HasMaxLength(50);
+            builder.Property(c => c.Name)
+                .HasColumnType("varchar")
+                .HasMaxLength(50)
+                .IsRequired();
         }
     }
 }

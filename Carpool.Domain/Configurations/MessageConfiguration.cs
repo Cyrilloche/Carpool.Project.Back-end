@@ -15,7 +15,15 @@ namespace Carpool.Domain.Configurations
             builder.ToTable("message");
 
             builder.HasKey(m => m.Id);
-            builder.Property(m => m.MessageContent).IsRequired().HasColumnType("text");
+            builder.Property(m => m.Id)
+                .HasColumnType("int");
+            builder.Property(m => m.MessageContent)
+                .HasColumnType("text")
+                .IsRequired();
+            builder.Property(m => m.SendingDate)
+                .HasColumnType("datetime");
+            builder.Property(m => m.ReceiptDate)
+            .HasColumnType("datetime");
 
             builder.HasOne<User>(m => m.UserSender)
             .WithMany(u => u.SentUserMessage)

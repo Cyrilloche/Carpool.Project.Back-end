@@ -15,7 +15,12 @@ namespace Carpool.Domain.Configurations
             builder.ToTable("notification");
 
             builder.HasKey(n => n.Id);
-            builder.Property(n => n.Name).IsRequired().HasMaxLength(50);
+            builder.Property(n => n.Id)
+                .HasColumnType("int");
+            builder.Property(n => n.Name)
+                .HasColumnType("varchar")
+                .HasMaxLength(50)
+                .IsRequired();
         }
     }
 }
